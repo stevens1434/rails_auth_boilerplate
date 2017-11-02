@@ -1,2 +1,15 @@
-<h1>Pets#new</h1>
-<p>Find me in app/views/pets/new.html.erb</p>
+<h1>Add New Pet</h1>
+
+<%= form_for :pets, url: pets_path do |form| %>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mui-textfield">
+                    <%= form.text_field :name, class: 'f', id: 'name' %>
+                    <%= form.label :name, class: '', for: 'name' %>
+                </div>
+            </div>
+        </div>
+
+        <%= form.submit 'Add Pet', :class => 'mui-btn mui-btn--primary' %>
+        <%end%>

@@ -5,8 +5,8 @@ class PetsController < ApplicationController
   end
 
   def create
-    Pet.create(pet_params)
-    redirect_to pet_path
+    Pet.create(pets_params)
+    redirect_to pets_path
   end
 
   def edit
@@ -28,7 +28,8 @@ class PetsController < ApplicationController
   def destroy
     puts "pet_controller to destory pet in db"
     p = Pet.find(params[:id])
-    redirect_to new_pet_path
+    p.destroy
+    redirect_to pets_path
   end
 
   def show
@@ -37,6 +38,6 @@ class PetsController < ApplicationController
   end
 
   def pets_params
-    params.require(:pet).permit(:name)
+    params.require(:pets).permit(:name, @current_user.id)
   end
 end
