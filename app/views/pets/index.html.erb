@@ -1,9 +1,10 @@
 <h1>My Pets</h1>
 <%= link_to "home", root_path(@current_user) %>
+<%= link_to "Add New Pet", new_pet_path(@pet)  %>
 <br>
 
-<% @pets.each do |pets| %>
-<%= @current_user.pets.name %>
+<% @current_user.pets.each do |pets| %>
+<%= @pets.name %>
 <%= link_to "Pet Info", pet_path(pets)  %>
 <br>
 <% end %>
