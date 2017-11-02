@@ -1,0 +1,9 @@
+<h1><%= @pet %></h1>
+<%= link_to "Pets", pets_path  %>
+<br>
+<%= link_to "home", root_path(@pet) %>
+<%= link_to "Edit Pet", edit_pet_path(@pet)  %>
+<br>
+
+
+<%= link_to "Delete Pet", pets_path, method: :delete  %>

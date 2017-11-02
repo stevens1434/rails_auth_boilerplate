@@ -1,6 +1,7 @@
 <h1>Root Route</h1>
 <%= link_to "My Profile", user_path(@current_user)  %>
 <%= link_to "Edit Profile", edit_user_path(@current_user)  %>
+<%= link_to "Pets", pets_path  %>
 <br>
 
 <p>Name: <%= @current_user.try(:firstName) %>
@@ -11,6 +12,9 @@
 <p>Email: <%= @current_user.try(:email) %> </p>
 
 <br>
+
+<%= @pets.try(:name) %>
+<%= @current_user.pets.name %>
 
 <%= button_to 'logout', logout_path, :method => :delete %>
 

@@ -2,11 +2,12 @@ class UserController < ApplicationController
 
   def index
       @users = User.all
+      @pets = Pet.all
     end
 
     def create
       User.create(user_params)
-      redirect_to root_path
+      redirect_to user_path
     end
 
     def edit

@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_pet
+    @current_pet ||= Pet.find_by_id(@pet[:id])
+  end
+
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
   end

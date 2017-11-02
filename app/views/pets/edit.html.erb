@@ -1,0 +1,19 @@
+<h1>Edit Profile</h1>
+<%= link_to "home", root_path(@current_user) %>
+<%= link_to "My Profile", user_path(@current_user)  %>
+<%= link_to "Pets", pets_path  %>
+<br>
+
+<%= form_for @pet do |form| %>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mui-textfield">
+                    <%= form.text_field :name, class: 'f', id: 'name' %>
+                    <%= form.label :name, class: '', for: 'name' %>
+                </div>
+            </div>
+        </div>
+
+        <%= form.submit 'Submit Changes', :class => 'mui-btn mui-btn--primary' %>
+        <%end%>
